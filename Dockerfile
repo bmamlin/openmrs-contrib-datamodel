@@ -3,11 +3,11 @@
 #
 # Build:
 #
-# docker build -t omrs-datamodel .
+# docker build -t openmrs-datamodel .
 #
 # Run:
 #
-# docker run -d -p 80:80 --name omrs-datamodel omrs-datamodel
+# docker run -d -p 80:80 --name openmrs-datamodel openmrs-datamodel
 
 FROM alpine:3.2
 MAINTAINER burke@openmrs.org
