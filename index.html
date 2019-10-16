@@ -97,7 +97,8 @@ body {
 <body>
 <div class="header">
 	<ul class="tabs">
-		<li class="current 1_11"><a href="#">1.11</a></li>
+		<li class="current ra_1_9"><a href="#">RA 1.9</a></li>
+		<li class="1_11"><a href="#">1.11</a></li>
 		<li class="1_10"><a href="#">1.10</a></li>
 		<li class="1_9_7"><a href="#">1.9.7</a></li>
 	</ul>
@@ -106,7 +107,7 @@ body {
 	</div>
 </div>
 <div class="content">
-	<iframe id="content" src="openmrs-data-model-1.11.html" frameborder="0" border="0" cellspacing="0"></iframe>
+	<iframe id="content" src="openmrs-refapp-data-model-1.9.html" frameborder="0" border="0" cellspacing="0"></iframe>
 </div>
 <script>
 <!--
@@ -122,8 +123,10 @@ $(document).ready(function() {
 			$("#content").attr("src", "openmrs-data-model-1.9.7.html");
 		} else if ($(this).text() == "1.10") {
 			$("#content").attr("src", "openmrs-data-model-1.10.html");
-		} else {
+		} else if ($(this).text() == "1.11") {
 			$("#content").attr("src", "openmrs-data-model-1.11.html");
+		} else {
+			$("#content").attr("src", "openmrs-refapp-data-model-1.9.html");
 		}
 	})
 	function init() {
