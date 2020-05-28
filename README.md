@@ -1,5 +1,5 @@
-openmrs-data-model
-==================
+openmrs-contrib-data-model
+==========================
 
 This repository contains web pages describing different versions of 
 the [OpenMRS](https://openmrs.org/) data model. These files were 
