@@ -107,7 +107,7 @@ body {
 	</div>
 </div>
 <div class="content">
-	<iframe id="content" src="openmrs-data-model-3.4.0.html" frameborder="0" border="0" cellspacing="0"></iframe>
+	<iframe id="content" src="" frameborder="0" border="0" cellspacing="0"></iframe>
 </div>
 <script>
 <!--
@@ -120,15 +120,15 @@ $(document).ready(function() {
 		$(".tabs li").removeClass("current");
 		$(this).parent().addClass("current");
 		if ($(this).text() == "3.4.0") {
-			$("#content").attr("src", "openmrs-data-model-3.4.0.html");
+			$("#content").attr("src", "openmrs-data-model-3.4.0.html" + window.location.hash);
 		} else if ($(this).text() == "3.3.0") {
-			$("#content").attr("src", "openmrs-data-model-3.3.0.html");
+			$("#content").attr("src", "openmrs-data-model-3.3.0.html" + window.location.hash);
 		} else if ($(this).text() == "3.2.1") {
-			$("#content").attr("src", "openmrs-data-model-3.2.1.html");
+			$("#content").attr("src", "openmrs-data-model-3.2.1.html" + window.location.hash);
 		} else if ($(this).text() == "1.9.0") {
-			$("#content").attr("src", "openmrs-data-model-1.9.0.html"); 
+			$("#content").attr("src", "openmrs-data-model-1.9.0.html" + window.location.hash);
 		} else {
-			$("#content").attr("src", "openmrs-refapp-data-model-3.4.0.html");
+			$("#content").attr("src", "openmrs-refapp-data-model-3.4.0.html" + window.location.hash);
 		}
 	})
 	function init() {
@@ -141,6 +141,8 @@ $(document).ready(function() {
 			if (tab && tab.size() == 1) {
 				tab.click();
 			}
+		} else {
+			$("#content").attr("src", "openmrs-data-model-3.4.0.html" + window.location.hash);
 		}
 	}
 	init();
