@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>OpenMRS 1.9.7 Data Model</title>
+<title>OpenMRS 1.9.0 Data Model</title>
 <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8B////Af///wH///8BFajwERWo8FsVqPCfFajwuxWo8LkVqPCXFajwTRWo8Av///8B////Af///wH///8B////Af///wH///8B////ARWo74EVqPD/Fajw/xWo8P8VqPD/Fajw/xWo8P0VqO9j////Af///wH///8B////Af///wH///8B////Af///wERqvWVFajw/xWo8P8VqPD3Fajw+RWo8P8VqO//Ean5d////wH///8B////Af///wH///8B////Af///wH///8BEKz2kxSo8cUVqPBVFajwKRWo8CsVqPBjE6jz1RSo83f///8B////Af///wH///8BpldbC6ZXW2mnVlqBsVFQh0SOwVcMrfkL////Af///wH///8B////ARCo+xdNnnxjjpIAfYSTAH2EkwBf////AaZXW1WmV1v/pldb/6lVWMehW2EF////Af///wH///8B////Af///wH///8BWZthF4uSAOOEkwD/hJMA94STADGmV1ubpldb/6ZXW/+mV1tL////Af///wH///8B////Af///wH///8B////Af///wGGkwBxhJMA/4STAP+EkwB1pldbuaZXW/+mV1vvpldbI////wH///8B////Af///wH///8B////Af///wH///8BhJMAO4STAP+EkwD/hJMAmaZXW7umV1v/pldb7aZXWyH///8B////Af///wH///8B////Af///wH///8B////AYSTADeEkwD/hJMA/4STAJumV1ujpldb/6ZXW/+mV1s/////Af///wH///8B////Af///wH///8B////Af///wGEkwBjhJMA/4STAP+EkwB9pldbYaZXW/+mV1v/qFdZtaZXWwP///8B////Af///wH///8B////Af///wGAkQ8LhZQA0YSTAP+EkwD/hJMAPaZXWxOmV1uPp1daobRWTJ9SYLpF////Af///wH///8B////Af///wEaYf8DVHx8WZCYAKuEkwCphJMAh4STAAf///8B////Af///wH///8BIWXzlyBl9KMiZfIxImXyGSJl8hkiZfI9HGP8sz5yq3f///8B////Af///wH///8B////Af///wH///8B////AR1m+J8iZfL/ImXy+yJl8tsiZfLdImXy/yJl8f8dYvx1////Af///wH///8B////Af///wH///8B////Af///wEjZfGRImXy/yJl8v8iZfL/ImXy/yJl8v8iZfL/ImXxb////wH///8B////Af///wH///8B////Af///wH///8BImXyHSJl8m8iZfKtImXyyyJl8skiZfKpImXyaSJl8hf///8B////Af///wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//w%3D%3D" rel="icon" type="image/x-icon" />
 <style type="text/css">
 <!--
@@ -131,7 +131,7 @@ body {
 </script>
 </head>
 <body>
-<div class="title">OpenMRS 1.9.7 Data Model</div>
+<div class="title">OpenMRS 1.9.0 Data Model</div>
 <div class="form">
   <input id="q" type="search" placeholder="search (or type 'help')" />
   <div class="share">
@@ -162,50 +162,60 @@ perform that search when the page is loaded, so you can share links to specific 
 </table>
 <div class="tip">hotkeys: "/" jumps to search box, "?" toggle help. Click on help to dismiss.</div>
 </div>
-<div class="table" id="active_list">
-<div class="table-name">active_list</div>
-<div class="column primary-key required"><div class="column-name">active_list_id</div><div class="column-type">integer (10)</div></div>
-<div class="column required"><div class="column-name">active_list_type_id</div><div class="column-type fk">active_list_type.active_list_type_id</div></div>
-<div class="column required"><div class="column-name">person_id</div><div class="column-type fk">person.person_id</div></div>
-<div class="column required"><div class="column-name">concept_id</div><div class="column-type fk">concept.concept_id</div></div>
-<div class="column"><div class="column-name">start_obs_id</div><div class="column-type fk">obs.obs_id</div></div>
-<div class="column"><div class="column-name">stop_obs_id</div><div class="column-type fk">obs.obs_id</div></div>
-<div class="column required"><div class="column-name">start_date</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">end_date</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">comments</div><div class="column-type">varchar (255)</div></div>
+<div class="table" id="address_hierarchy_address_to_entry_map">
+<div class="table-name">address_hierarchy_address_to_entry_map</div>
+<div class="column primary-key required"><div class="column-name">address_to_entry_map_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">address_id</div><div class="column-type fk">person_address.person_address_id</div></div>
+<div class="column required"><div class="column-name">entry_id</div><div class="column-type fk">address_hierarchy_entry.address_hierarchy_entry_id</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="address_hierarchy_entry">
+<div class="table-name">address_hierarchy_entry</div>
+<div class="column primary-key required"><div class="column-name">address_hierarchy_entry_id</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">name</div><div class="column-type">varchar (160)</div></div>
+<div class="column required"><div class="column-name">level_id</div><div class="column-type fk">address_hierarchy_level.address_hierarchy_level_id</div></div>
+<div class="column"><div class="column-name">parent_id</div><div class="column-type fk">address_hierarchy_entry.address_hierarchy_entry_id</div></div>
+<div class="column"><div class="column-name">user_generated_id</div><div class="column-type">varchar (11)</div></div>
+<div class="column"><div class="column-name">latitude</div><div class="column-type">double (22)</div></div>
+<div class="column"><div class="column-name">longitude</div><div class="column-type">double (22)</div></div>
+<div class="column"><div class="column-name">elevation</div><div class="column-type">double (22)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="address_hierarchy_level">
+<div class="table-name">address_hierarchy_level</div>
+<div class="column primary-key required"><div class="column-name">address_hierarchy_level_id</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">name</div><div class="column-type">varchar (160)</div></div>
+<div class="column"><div class="column-name">parent_level_id</div><div class="column-type fk">address_hierarchy_level.address_hierarchy_level_id</div></div>
+<div class="column"><div class="column-name">address_field</div><div class="column-type">varchar (50)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">required</div><div class="column-type">bit</div></div>
+</div>
+<div class="table" id="allergy">
+<div class="table-name">allergy</div>
+<div class="column primary-key required"><div class="column-name">allergy_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+<div class="column"><div class="column-name">severity_concept_id</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column required"><div class="column-name">coded_allergen</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column"><div class="column-name">non_coded_allergen</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">allergen_type</div><div class="column-type">varchar (50)</div></div>
+<div class="column"><div class="column-name">comment</div><div class="column-type">varchar (1024)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">voided</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
-<div class="table" id="active_list_allergy">
-<div class="table-name">active_list_allergy</div>
-<div class="column primary-key required"><div class="column-name">active_list_id</div><div class="column-type">integer (10)</div></div>
-<div class="column"><div class="column-name">allergy_type</div><div class="column-type">varchar (50)</div></div>
-<div class="column"><div class="column-name">reaction_concept_id</div><div class="column-type fk">concept.concept_id</div></div>
-<div class="column"><div class="column-name">severity</div><div class="column-type">varchar (50)</div></div>
-</div>
-<div class="table" id="active_list_problem">
-<div class="table-name">active_list_problem</div>
-<div class="column primary-key required"><div class="column-name">active_list_id</div><div class="column-type">integer (10)</div></div>
-<div class="column"><div class="column-name">status</div><div class="column-type">varchar (50)</div></div>
-<div class="column"><div class="column-name">sort_weight</div><div class="column-type">double (22)</div></div>
-</div>
-<div class="table" id="active_list_type">
-<div class="table-name">active_list_type</div>
-<div class="column primary-key required"><div class="column-name">active_list_type_id</div><div class="column-type">integer (10)</div></div>
-<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (50)</div></div>
-<div class="column"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
-<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
-<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
-<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
-<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
-<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="table" id="allergy_reaction">
+<div class="table-name">allergy_reaction</div>
+<div class="column primary-key required"><div class="column-name">allergy_reaction_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">allergy_id</div><div class="column-type fk">allergy.allergy_id</div></div>
+<div class="column required"><div class="column-name">reaction_concept_id</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column"><div class="column-name">reaction_non_coded</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="appframework_component_state">
 <div class="table-name">appframework_component_state</div>
@@ -215,6 +225,118 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">component_type</div><div class="column-type">varchar (50)</div></div>
 <div class="column"><div class="column-name">enabled</div><div class="column-type">bit</div></div>
 </div>
+<div class="table" id="appframework_user_app">
+<div class="table-name">appframework_user_app</div>
+<div class="column primary-key required"><div class="column-name">app_id</div><div class="column-type">varchar (50)</div></div>
+<div class="column required"><div class="column-name">json</div><div class="column-type">long varchar (16777215)</div></div>
+</div>
+<div class="table" id="appointmentscheduling_appointment">
+<div class="table-name">appointmentscheduling_appointment</div>
+<div class="column primary-key required"><div class="column-name">appointment_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">time_slot_id</div><div class="column-type fk">appointmentscheduling_time_slot.time_slot_id</div></div>
+<div class="column"><div class="column-name">visit_id</div><div class="column-type fk">visit.visit_id</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+<div class="column required"><div class="column-name">appointment_type_id</div><div class="column-type fk">appointmentscheduling_appointment_type.appointment_type_id</div></div>
+<div class="column required"><div class="column-name">status</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">reason</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">voided</div><div class="column-type">tinyint (3)</div></div>
+<div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">cancel_reason</div><div class="column-type">varchar (1024)</div></div>
+</div>
+<div class="table" id="appointmentscheduling_appointment_block">
+<div class="table-name">appointmentscheduling_appointment_block</div>
+<div class="column primary-key required"><div class="column-name">appointment_block_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">location_id</div><div class="column-type fk">location.location_id</div></div>
+<div class="column"><div class="column-name">provider_id</div><div class="column-type fk">provider.provider_id</div></div>
+<div class="column required"><div class="column-name">start_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">end_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">voided</div><div class="column-type">tinyint (3)</div></div>
+<div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+</div>
+<div class="table" id="appointmentscheduling_appointment_request">
+<div class="table-name">appointmentscheduling_appointment_request</div>
+<div class="column primary-key required"><div class="column-name">appointment_request_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+<div class="column required"><div class="column-name">appointment_type_id</div><div class="column-type fk">appointmentscheduling_appointment_type.appointment_type_id</div></div>
+<div class="column required"><div class="column-name">status</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">provider_id</div><div class="column-type fk">provider.provider_id</div></div>
+<div class="column"><div class="column-name">requested_by</div><div class="column-type fk">provider.provider_id</div></div>
+<div class="column required"><div class="column-name">requested_on</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">min_time_frame_value</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">min_time_frame_units</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">max_time_frame_value</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">max_time_frame_units</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">notes</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">voided</div><div class="column-type">tinyint (3)</div></div>
+<div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+</div>
+<div class="table" id="appointmentscheduling_appointment_status_history">
+<div class="table-name">appointmentscheduling_appointment_status_history</div>
+<div class="column primary-key required"><div class="column-name">appointment_status_history_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">appointment_id</div><div class="column-type fk">appointmentscheduling_appointment.appointment_id</div></div>
+<div class="column required"><div class="column-name">status</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">start_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">end_date</div><div class="column-type">timestamp (19)</div></div>
+</div>
+<div class="table" id="appointmentscheduling_appointment_type">
+<div class="table-name">appointmentscheduling_appointment_type</div>
+<div class="column primary-key required"><div class="column-name">appointment_type_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">duration</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">tinyint (3)</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">confidential</div><div class="column-type">tinyint (3)</div></div>
+</div>
+<div class="table" id="appointmentscheduling_block_type_map">
+<div class="table-name">appointmentscheduling_block_type_map</div>
+<div class="column primary-key required"><div class="column-name">appointment_type_id</div><div class="column-type fk">appointmentscheduling_appointment_type.appointment_type_id</div></div>
+<div class="column primary-key required"><div class="column-name">appointment_block_id</div><div class="column-type fk">appointmentscheduling_appointment_block.appointment_block_id</div></div>
+</div>
+<div class="table" id="appointmentscheduling_time_slot">
+<div class="table-name">appointmentscheduling_time_slot</div>
+<div class="column primary-key required"><div class="column-name">time_slot_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">appointment_block_id</div><div class="column-type fk">appointmentscheduling_appointment_block.appointment_block_id</div></div>
+<div class="column required"><div class="column-name">start_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">end_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">voided</div><div class="column-type">tinyint (3)</div></div>
+<div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+</div>
 <div class="table" id="calculation_registration">
 <div class="table-name">calculation_registration</div>
 <div class="column primary-key required"><div class="column-name">calculation_registration_id</div><div class="column-type">integer (10)</div></div>
@@ -223,6 +345,96 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">calculation_name</div><div class="column-type">varchar (512)</div></div>
 <div class="column"><div class="column-name">configuration</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="care_setting">
+<div class="table-name">care_setting</div>
+<div class="column primary-key required"><div class="column-name">care_setting_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">care_setting_type</div><div class="column-type">varchar (50)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="chartsearch_bookmark">
+<div class="table-name">chartsearch_bookmark</div>
+<div class="column primary-key required"><div class="column-name">bookmark_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">bookmark_name</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">search_phrase</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">selected_categories</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">user_id</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+<div class="column required"><div class="column-name">default_search</div><div class="column-type">bit</div></div>
+</div>
+<div class="table" id="chartsearch_categories">
+<div class="table-name">chartsearch_categories</div>
+<div class="column primary-key required"><div class="column-name">category_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (50)</div></div>
+<div class="column"><div class="column-name">filter_query</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="chartsearch_category_displayname">
+<div class="table-name">chartsearch_category_displayname</div>
+<div class="column primary-key required"><div class="column-name">displayname_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">diplay_name</div><div class="column-type">varchar (15)</div></div>
+<div class="column required"><div class="column-name">preference_id</div><div class="column-type fk">chartsearch_preference.preference_id</div></div>
+<div class="column required"><div class="column-name">category_id</div><div class="column-type fk">chartsearch_categories.category_id</div></div>
+</div>
+<div class="table" id="chartsearch_history">
+<div class="table-name">chartsearch_history</div>
+<div class="column primary-key required"><div class="column-name">search_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">search_phrase</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">last_searched_at</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">user_id</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+</div>
+<div class="table" id="chartsearch_note">
+<div class="table-name">chartsearch_note</div>
+<div class="column primary-key required"><div class="column-name">note_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">comment</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">search_phrase</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">priority</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">created_or_last_modified_at</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">display_color</div><div class="column-type">char (10)</div></div>
+<div class="column required"><div class="column-name">user_id</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+</div>
+<div class="table" id="chartsearch_preference">
+<div class="table-name">chartsearch_preference</div>
+<div class="column primary-key required"><div class="column-name">preference_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">enable_history</div><div class="column-type">bit</div></div>
+<div class="column required"><div class="column-name">enable_bookmark</div><div class="column-type">bit</div></div>
+<div class="column required"><div class="column-name">enable_notes</div><div class="column-type">bit</div></div>
+<div class="column required"><div class="column-name">enable_duplicateresults</div><div class="column-type">bit</div></div>
+<div class="column required"><div class="column-name">enable_multiplefiltering</div><div class="column-type">bit</div></div>
+<div class="column required"><div class="column-name">enable_quicksearches</div><div class="column-type">bit</div></div>
+<div class="column required"><div class="column-name">enable_defaultsearch</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">personalnotes_colors</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">user_id</div><div class="column-type fk">users.user_id</div></div>
+</div>
+<div class="table" id="chartsearch_synonym_groups">
+<div class="table-name">chartsearch_synonym_groups</div>
+<div class="column primary-key required"><div class="column-name">group_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">group_name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">is_category</div><div class="column-type">bit</div></div>
+</div>
+<div class="table" id="chartsearch_synonyms">
+<div class="table-name">chartsearch_synonyms</div>
+<div class="column primary-key required"><div class="column-name">synonym_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">group_id</div><div class="column-type fk">chartsearch_synonym_groups.group_id</div></div>
+<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
 </div>
 <div class="table" id="clob_datatype_storage">
 <div class="table-name">clob_datatype_storage</div>
@@ -243,12 +455,22 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="cohort_member">
 <div class="table-name">cohort_member</div>
-<div class="column primary-key required"><div class="column-name">cohort_id</div><div class="column-type fk">cohort.cohort_id</div></div>
-<div class="column primary-key required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+<div class="column required"><div class="column-name">cohort_id</div><div class="column-type fk">cohort.cohort_id</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+<div class="column primary-key required"><div class="column-name">cohort_member_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">start_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">end_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">voided</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">voided_by</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept">
 <div class="table-name">concept</div>
@@ -268,7 +490,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept_answer">
 <div class="table-name">concept_answer</div>
@@ -279,20 +501,59 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">sort_weight</div><div class="column-type">double (22)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="concept_attribute">
+<div class="table-name">concept_attribute</div>
+<div class="column primary-key required"><div class="column-name">concept_attribute_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">concept_id</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column required"><div class="column-name">attribute_type_id</div><div class="column-type fk">concept_attribute_type.concept_attribute_type_id</div></div>
+<div class="column required"><div class="column-name">value_reference</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">voided</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+</div>
+<div class="table" id="concept_attribute_type">
+<div class="table-name">concept_attribute_type</div>
+<div class="column primary-key required"><div class="column-name">concept_attribute_type_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (1024)</div></div>
+<div class="column"><div class="column-name">datatype</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">datatype_config</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">preferred_handler</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">handler_config</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">min_occurs</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">max_occurs</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept_class">
 <div class="table-name">concept_class</div>
 <div class="column primary-key required"><div class="column-name">concept_class_id</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 </div>
 <div class="table" id="concept_complex">
 <div class="table-name">concept_complex</div>
@@ -304,14 +565,14 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column primary-key required"><div class="column-name">concept_datatype_id</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">hl7_abbreviation</div><div class="column-type">varchar (3)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept_description">
 <div class="table-name">concept_description</div>
@@ -323,7 +584,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept_map_type">
 <div class="table-name">concept_map_type</div>
@@ -355,20 +616,24 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 </div>
 <div class="table" id="concept_name_tag">
 <div class="table-name">concept_name_tag</div>
 <div class="column primary-key required"><div class="column-name">concept_name_tag_id</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">tag</div><div class="column-type">varchar (50)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">voided</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">voided_by</div><div class="column-type">integer (10)</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 </div>
 <div class="table" id="concept_name_tag_map">
 <div class="table-name">concept_name_tag_map</div>
@@ -386,6 +651,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">low_normal</div><div class="column-type">double (22)</div></div>
 <div class="column"><div class="column-name">units</div><div class="column-type">varchar (50)</div></div>
 <div class="column required"><div class="column-name">precise</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">display_precision</div><div class="column-type">integer (10)</div></div>
 </div>
 <div class="table" id="concept_proposal">
 <div class="table-name">concept_proposal</div>
@@ -403,7 +669,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">locale</div><div class="column-type">varchar (50)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept_proposal_tag_map">
 <div class="table-name">concept_proposal_tag_map</div>
@@ -420,7 +686,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">concept_id</div><div class="column-type fk">concept.concept_id</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept_reference_source">
 <div class="table-name">concept_reference_source</div>
@@ -434,7 +700,10 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">unique_id</div><div class="column-type">varchar (250)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 </div>
 <div class="table" id="concept_reference_term">
 <div class="table-name">concept_reference_term</div>
@@ -474,13 +743,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">sort_weight</div><div class="column-type">double (22)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
-</div>
-<div class="table" id="concept_set_derived">
-<div class="table-name">concept_set_derived</div>
-<div class="column primary-key required"><div class="column-name">concept_id</div><div class="column-type">integer (10)</div></div>
-<div class="column primary-key required"><div class="column-name">concept_set</div><div class="column-type">integer (10)</div></div>
-<div class="column"><div class="column-name">sort_weight</div><div class="column-type">double (22)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept_state_conversion">
 <div class="table-name">concept_state_conversion</div>
@@ -488,23 +751,34 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">concept_id</div><div class="column-type fk">concept.concept_id</div></div>
 <div class="column"><div class="column-name">program_workflow_id</div><div class="column-type fk">program_workflow.program_workflow_id</div></div>
 <div class="column"><div class="column-name">program_workflow_state_id</div><div class="column-type fk">program_workflow_state.program_workflow_state_id</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="concept_stop_word">
 <div class="table-name">concept_stop_word</div>
 <div class="column primary-key required"><div class="column-name">concept_stop_word_id</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">word</div><div class="column-type">varchar (50)</div></div>
-<div class="column required"><div class="column-name">locale</div><div class="column-type">varchar (20)</div></div>
+<div class="column"><div class="column-name">locale</div><div class="column-type">varchar (50)</div></div>
 <div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
-<div class="table" id="concept_word">
-<div class="table-name">concept_word</div>
-<div class="column primary-key required"><div class="column-name">concept_word_id</div><div class="column-type">integer (10)</div></div>
+<div class="table" id="conditions">
+<div class="table-name">conditions</div>
+<div class="column primary-key required"><div class="column-name">condition_id</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">previous_condition_id</div><div class="column-type fk">conditions.condition_id</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+<div class="column required"><div class="column-name">status</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">concept_id</div><div class="column-type fk">concept.concept_id</div></div>
-<div class="column required"><div class="column-name">word</div><div class="column-type">varchar (50)</div></div>
-<div class="column required"><div class="column-name">locale</div><div class="column-type">varchar (20)</div></div>
-<div class="column required"><div class="column-name">concept_name_id</div><div class="column-type fk">concept_name.concept_name_id</div></div>
-<div class="column"><div class="column-name">weight</div><div class="column-type">double (22)</div></div>
+<div class="column"><div class="column-name">condition_non_coded</div><div class="column-type">varchar (1024)</div></div>
+<div class="column"><div class="column-name">onset_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">additional_detail</div><div class="column-type">varchar (1024)</div></div>
+<div class="column"><div class="column-name">end_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">end_reason</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">voided</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="drug">
 <div class="table-name">drug</div>
@@ -513,11 +787,9 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">combination</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">dosage_form</div><div class="column-type fk">concept.concept_id</div></div>
-<div class="column"><div class="column-name">dose_strength</div><div class="column-type">double (22)</div></div>
 <div class="column"><div class="column-name">maximum_daily_dose</div><div class="column-type">double (22)</div></div>
 <div class="column"><div class="column-name">minimum_daily_dose</div><div class="column-type">double (22)</div></div>
 <div class="column"><div class="column-name">route</div><div class="column-type fk">concept.concept_id</div></div>
-<div class="column"><div class="column-name">units</div><div class="column-type">varchar (50)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
@@ -526,24 +798,53 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">strength</div><div class="column-type">varchar (255)</div></div>
 </div>
 <div class="table" id="drug_ingredient">
 <div class="table-name">drug_ingredient</div>
-<div class="column primary-key required"><div class="column-name">concept_id</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column primary-key required"><div class="column-name">drug_id</div><div class="column-type fk">drug.drug_id</div></div>
 <div class="column primary-key required"><div class="column-name">ingredient_id</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">strength</div><div class="column-type">double (22)</div></div>
+<div class="column"><div class="column-name">units</div><div class="column-type fk">concept.concept_id</div></div>
 </div>
 <div class="table" id="drug_order">
 <div class="table-name">drug_order</div>
 <div class="column primary-key required"><div class="column-name">order_id</div><div class="column-type fk">orders.order_id</div></div>
 <div class="column"><div class="column-name">drug_inventory_id</div><div class="column-type fk">drug.drug_id</div></div>
 <div class="column"><div class="column-name">dose</div><div class="column-type">double (22)</div></div>
-<div class="column"><div class="column-name">equivalent_daily_dose</div><div class="column-type">double (22)</div></div>
-<div class="column"><div class="column-name">units</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">frequency</div><div class="column-type">varchar (255)</div></div>
-<div class="column required"><div class="column-name">prn</div><div class="column-type">bit</div></div>
-<div class="column required"><div class="column-name">complex</div><div class="column-type">bit</div></div>
-<div class="column"><div class="column-name">quantity</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">as_needed</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">dosing_type</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">quantity</div><div class="column-type">double (22)</div></div>
+<div class="column"><div class="column-name">as_needed_condition</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">num_refills</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">dosing_instructions</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">duration</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">duration_units</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column"><div class="column-name">quantity_units</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column"><div class="column-name">route</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column"><div class="column-name">dose_units</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column"><div class="column-name">frequency</div><div class="column-type fk">order_frequency.order_frequency_id</div></div>
+<div class="column"><div class="column-name">brand_name</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">dispense_as_written</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">drug_non_coded</div><div class="column-type">varchar (255)</div></div>
+</div>
+<div class="table" id="drug_reference_map">
+<div class="table-name">drug_reference_map</div>
+<div class="column primary-key required"><div class="column-name">drug_reference_map_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">drug_id</div><div class="column-type fk">drug.drug_id</div></div>
+<div class="column required"><div class="column-name">term_id</div><div class="column-type fk">concept_reference_term.concept_reference_term_id</div></div>
+<div class="column required"><div class="column-name">concept_map_type</div><div class="column-type fk">concept_map_type.concept_map_type_id</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="encounter">
 <div class="table-name">encounter</div>
@@ -562,7 +863,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">visit_id</div><div class="column-type fk">visit.visit_id</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="encounter_provider">
 <div class="table-name">encounter_provider</div>
@@ -606,7 +907,11 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">view_privilege</div><div class="column-type fk">privilege.privilege</div></div>
+<div class="column"><div class="column-name">edit_privilege</div><div class="column-type fk">privilege.privilege</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
 </div>
 <div class="table" id="field">
 <div class="table-name">field</div>
@@ -627,7 +932,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="field_answer">
 <div class="table-name">field_answer</div>
@@ -635,7 +940,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column primary-key required"><div class="column-name">answer_id</div><div class="column-type fk">concept.concept_id</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="field_type">
 <div class="table-name">field_type</div>
@@ -645,7 +950,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">is_set</div><div class="column-type">bit</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="form">
 <div class="table-name">form</div>
@@ -666,7 +971,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retired_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="form_field">
 <div class="table-name">form_field</div>
@@ -685,7 +990,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">sort_weight</div><div class="column-type">double (22)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="form_resource">
 <div class="table-name">form_resource</div>
@@ -698,17 +1003,21 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">preferred_handler</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">handler_config</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 </div>
 <div class="table" id="global_property">
 <div class="table-name">global_property</div>
 <div class="column primary-key required"><div class="column-name">property</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">property_value</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 <div class="column"><div class="column-name">datatype</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">datatype_config</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column"><div class="column-name">preferred_handler</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">handler_config</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 </div>
 <div class="table" id="hl7_in_archive">
 <div class="table-name">hl7_in_archive</div>
@@ -718,7 +1027,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">hl7_data</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">message_state</div><div class="column-type">integer (10)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="hl7_in_error">
 <div class="table-name">hl7_in_error</div>
@@ -729,7 +1038,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">error</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">error_details</div><div class="column-type">long varchar (16777215)</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="hl7_in_queue">
 <div class="table-name">hl7_in_queue</div>
@@ -741,7 +1050,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">date_processed</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">error_msg</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="hl7_source">
 <div class="table-name">hl7_source</div>
@@ -750,7 +1059,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="htmlformentry_html_form">
 <div class="table-name">htmlformentry_html_form</div>
@@ -776,6 +1085,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">source</div><div class="column-type fk">idgen_identifier_source.id</div></div>
 <div class="column required"><div class="column-name">manual_entry_enabled</div><div class="column-type">bit</div></div>
 <div class="column required"><div class="column-name">automatic_generation_enabled</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">location</div><div class="column-type fk">location.location_id</div></div>
 </div>
 <div class="table" id="idgen_id_pool">
 <div class="table-name">idgen_id_pool</div>
@@ -841,7 +1151,8 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">first_identifier_base</div><div class="column-type">varchar (50)</div></div>
 <div class="column"><div class="column-name">prefix</div><div class="column-type">varchar (20)</div></div>
 <div class="column"><div class="column-name">suffix</div><div class="column-type">varchar (20)</div></div>
-<div class="column"><div class="column-name">length</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">min_length</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">max_length</div><div class="column-type">integer (10)</div></div>
 </div>
 <div class="table" id="liquibasechangelog">
 <div class="table-name">liquibasechangelog</div>
@@ -889,7 +1200,18 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">parent_location</div><div class="column-type fk">location.location_id</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">address7</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address8</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address9</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address10</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address11</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address12</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address13</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address14</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address15</div><div class="column-type">varchar (255)</div></div>
 </div>
 <div class="table" id="location_attribute">
 <div class="table-name">location_attribute</div>
@@ -939,7 +1261,9 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
 </div>
 <div class="table" id="location_tag_map">
 <div class="table-name">location_tag_map</div>
@@ -998,6 +1322,74 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">token_registration_id</div><div class="column-type fk">logic_token_registration.token_registration_id</div></div>
 <div class="column required"><div class="column-name">tag</div><div class="column-type">varchar (512)</div></div>
 </div>
+<div class="table" id="metadatamapping_metadata_set">
+<div class="table-name">metadatamapping_metadata_set</div>
+<div class="column primary-key required"><div class="column-name">metadata_set_id</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="metadatamapping_metadata_set_member">
+<div class="table-name">metadatamapping_metadata_set_member</div>
+<div class="column primary-key required"><div class="column-name">metadata_set_member_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">metadata_set_id</div><div class="column-type fk">metadatamapping_metadata_set.metadata_set_id</div></div>
+<div class="column required"><div class="column-name">metadata_class</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">metadata_uuid</div><div class="column-type">varchar (38)</div></div>
+<div class="column"><div class="column-name">sort_weight</div><div class="column-type">double (22)</div></div>
+<div class="column"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="metadatamapping_metadata_source">
+<div class="table-name">metadatamapping_metadata_source</div>
+<div class="column primary-key required"><div class="column-name">metadata_source_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="metadatamapping_metadata_term_mapping">
+<div class="table-name">metadatamapping_metadata_term_mapping</div>
+<div class="column primary-key required"><div class="column-name">metadata_term_mapping_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">metadata_source_id</div><div class="column-type fk">metadatamapping_metadata_source.metadata_source_id</div></div>
+<div class="column required"><div class="column-name">code</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">metadata_class</div><div class="column-type">varchar (1024)</div></div>
+<div class="column"><div class="column-name">metadata_uuid</div><div class="column-type">varchar (38)</div></div>
+<div class="column"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
 <div class="table" id="metadatasharing_exported_package">
 <div class="table-name">metadatasharing_exported_package</div>
 <div class="column primary-key required"><div class="column-name">exported_package_id</div><div class="column-type">integer (10)</div></div>
@@ -1031,18 +1423,10 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">date_imported</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">name</div><div class="column-type">varchar (64)</div></div>
-<div class="column"><div class="column-name">description</div><div class="column-type">varchar (256)</div></div>
+<div class="column required"><div class="column-name">description</div><div class="column-type">varchar (256)</div></div>
 <div class="column"><div class="column-name">import_config</div><div class="column-type">varchar (1024)</div></div>
 <div class="column"><div class="column-name">remote_version</div><div class="column-type">integer (10)</div></div>
 <div class="column"><div class="column-name">version</div><div class="column-type">integer (10)</div></div>
-</div>
-<div class="table" id="name_phonetics">
-<div class="table-name">name_phonetics</div>
-<div class="column primary-key required"><div class="column-name">name_phonetics_id</div><div class="column-type">integer (10)</div></div>
-<div class="column required"><div class="column-name">rendered_string</div><div class="column-type">varchar (255)</div></div>
-<div class="column required"><div class="column-name">person_name_id</div><div class="column-type fk">person_name.person_name_id</div></div>
-<div class="column required"><div class="column-name">field</div><div class="column-type">integer (10)</div></div>
-<div class="column required"><div class="column-name">renderer_class_name</div><div class="column-type">varchar (255)</div></div>
 </div>
 <div class="table" id="note">
 <div class="table-name">note</div>
@@ -1058,7 +1442,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="notification_alert">
 <div class="table-name">notification_alert</div>
@@ -1071,7 +1455,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="notification_alert_recipient">
 <div class="table-name">notification_alert_recipient</div>
@@ -1090,7 +1474,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">sender</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">recipients</div><div class="column-type">varchar (512)</div></div>
 <div class="column"><div class="column-name">ordinal</div><div class="column-type">integer (10)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="obs">
 <div class="table-name">obs</div>
@@ -1104,7 +1488,6 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">obs_group_id</div><div class="column-type fk">obs.obs_id</div></div>
 <div class="column"><div class="column-name">accession_number</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">value_group_id</div><div class="column-type">integer (10)</div></div>
-<div class="column"><div class="column-name">value_boolean</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">value_coded</div><div class="column-type fk">concept.concept_id</div></div>
 <div class="column"><div class="column-name">value_coded_name_id</div><div class="column-type fk">concept_name.concept_name_id</div></div>
 <div class="column"><div class="column-name">value_drug</div><div class="column-type fk">drug.drug_id</div></div>
@@ -1112,7 +1495,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">value_numeric</div><div class="column-type">double (22)</div></div>
 <div class="column"><div class="column-name">value_modifier</div><div class="column-type">varchar (2)</div></div>
 <div class="column"><div class="column-name">value_text</div><div class="column-type">long varchar (65535)</div></div>
-<div class="column"><div class="column-name">value_complex</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">value_complex</div><div class="column-type">varchar (1000)</div></div>
 <div class="column"><div class="column-name">comments</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
@@ -1120,37 +1503,113 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 <div class="column"><div class="column-name">previous_version</div><div class="column-type fk">obs.obs_id</div></div>
+<div class="column"><div class="column-name">form_namespace_and_path</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">status</div><div class="column-type">varchar (16)</div></div>
+<div class="column"><div class="column-name">interpretation</div><div class="column-type">varchar (32)</div></div>
 </div>
-<div class="table" id="order_type">
-<div class="table-name">order_type</div>
-<div class="column primary-key required"><div class="column-name">order_type_id</div><div class="column-type">integer (10)</div></div>
-<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
+<div class="table" id="order_frequency">
+<div class="table-name">order_frequency</div>
+<div class="column primary-key required"><div class="column-name">order_frequency_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">concept_id</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column"><div class="column-name">frequency_per_day</div><div class="column-type">double (22)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="order_group">
+<div class="table-name">order_group</div>
+<div class="column primary-key required"><div class="column-name">order_group_id</div><div class="column-type">integer (10)</div></div>
+<div class="column"><div class="column-name">order_set_id</div><div class="column-type fk">order_set.order_set_id</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
+<div class="column required"><div class="column-name">encounter_id</div><div class="column-type fk">encounter.encounter_id</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">voided</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="order_set">
+<div class="table-name">order_set</div>
+<div class="column primary-key required"><div class="column-name">order_set_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">operator</div><div class="column-type">varchar (50)</div></div>
+<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (1000)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="order_set_member">
+<div class="table-name">order_set_member</div>
+<div class="column primary-key required"><div class="column-name">order_set_member_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">order_type</div><div class="column-type fk">order_type.order_type_id</div></div>
+<div class="column"><div class="column-name">order_template</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">order_template_type</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">order_set_id</div><div class="column-type fk">order_set.order_set_id</div></div>
+<div class="column required"><div class="column-name">sequence_number</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">concept_id</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+</div>
+<div class="table" id="order_type">
+<div class="table-name">order_type</div>
+<div class="column primary-key required"><div class="column-name">order_type_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
+<div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
+<div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">java_class_name</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">parent</div><div class="column-type fk">order_type.order_type_id</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+</div>
+<div class="table" id="order_type_class_map">
+<div class="table-name">order_type_class_map</div>
+<div class="column primary-key required"><div class="column-name">order_type_id</div><div class="column-type fk">order_type.order_type_id</div></div>
+<div class="column primary-key required"><div class="column-name">concept_class_id</div><div class="column-type fk">concept_class.concept_class_id</div></div>
 </div>
 <div class="table" id="orders">
 <div class="table-name">orders</div>
 <div class="column primary-key required"><div class="column-name">order_id</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">order_type_id</div><div class="column-type fk">order_type.order_type_id</div></div>
 <div class="column required"><div class="column-name">concept_id</div><div class="column-type">integer (10)</div></div>
-<div class="column"><div class="column-name">orderer</div><div class="column-type fk">users.user_id</div></div>
-<div class="column"><div class="column-name">encounter_id</div><div class="column-type fk">encounter.encounter_id</div></div>
+<div class="column required"><div class="column-name">orderer</div><div class="column-type fk">provider.provider_id</div></div>
+<div class="column required"><div class="column-name">encounter_id</div><div class="column-type fk">encounter.encounter_id</div></div>
 <div class="column"><div class="column-name">instructions</div><div class="column-type">long varchar (65535)</div></div>
-<div class="column"><div class="column-name">start_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">date_activated</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">auto_expire_date</div><div class="column-type">timestamp (19)</div></div>
-<div class="column required"><div class="column-name">discontinued</div><div class="column-type">bit</div></div>
-<div class="column"><div class="column-name">discontinued_date</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">discontinued_by</div><div class="column-type fk">users.user_id</div></div>
-<div class="column"><div class="column-name">discontinued_reason</div><div class="column-type fk">concept.concept_id</div></div>
-<div class="column"><div class="column-name">discontinued_reason_non_coded</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">date_stopped</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">order_reason</div><div class="column-type fk">concept.concept_id</div></div>
+<div class="column"><div class="column-name">order_reason_non_coded</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">voided</div><div class="column-type">bit</div></div>
@@ -1159,13 +1618,20 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
 <div class="column"><div class="column-name">accession_number</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 <div class="column required"><div class="column-name">urgency</div><div class="column-type">varchar (50)</div></div>
+<div class="column required"><div class="column-name">order_number</div><div class="column-type">varchar (50)</div></div>
+<div class="column"><div class="column-name">previous_order_id</div><div class="column-type fk">orders.order_id</div></div>
+<div class="column required"><div class="column-name">order_action</div><div class="column-type">varchar (50)</div></div>
+<div class="column"><div class="column-name">comment_to_fulfiller</div><div class="column-type">varchar (1024)</div></div>
+<div class="column required"><div class="column-name">care_setting</div><div class="column-type fk">care_setting.care_setting_id</div></div>
+<div class="column"><div class="column-name">scheduled_date</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">order_group_id</div><div class="column-type fk">order_group.order_group_id</div></div>
+<div class="column"><div class="column-name">sort_weight</div><div class="column-type">double (22)</div></div>
 </div>
 <div class="table" id="patient">
 <div class="table-name">patient</div>
 <div class="column primary-key required"><div class="column-name">patient_id</div><div class="column-type fk">person.person_id</div></div>
-<div class="column"><div class="column-name">tribe</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
@@ -1174,11 +1640,12 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">allergy_status</div><div class="column-type">varchar (50)</div></div>
 </div>
 <div class="table" id="patient_identifier">
 <div class="table-name">patient_identifier</div>
 <div class="column primary-key required"><div class="column-name">patient_identifier_id</div><div class="column-type">integer (10)</div></div>
-<div class="column required"><div class="column-name">patient_id</div><div class="column-type">integer (10)</div></div>
+<div class="column required"><div class="column-name">patient_id</div><div class="column-type fk">patient.patient_id</div></div>
 <div class="column required"><div class="column-name">identifier</div><div class="column-type">varchar (50)</div></div>
 <div class="column required"><div class="column-name">identifier_type</div><div class="column-type fk">patient_identifier_type.patient_identifier_type_id</div></div>
 <div class="column required"><div class="column-name">preferred</div><div class="column-type">bit</div></div>
@@ -1191,13 +1658,13 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="patient_identifier_type">
 <div class="table-name">patient_identifier_type</div>
 <div class="column primary-key required"><div class="column-name">patient_identifier_type_id</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">name</div><div class="column-type">varchar (50)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column"><div class="column-name">format</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">check_digit</div><div class="column-type">bit</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
@@ -1210,7 +1677,10 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">uniqueness_behavior</div><div class="column-type">varchar (50)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 </div>
 <div class="table" id="patient_program">
 <div class="table-name">patient_program</div>
@@ -1229,7 +1699,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="patient_state">
 <div class="table-name">patient_state</div>
@@ -1246,7 +1716,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="person">
 <div class="table-name">person</div>
@@ -1265,7 +1735,9 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">deathdate_estimated</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">birthtime</div><div class="column-type">time (8)</div></div>
 </div>
 <div class="table" id="person_address">
 <div class="table-name">person_address</div>
@@ -1295,7 +1767,16 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">address6</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">address7</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address8</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address9</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address10</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address11</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address12</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address13</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address14</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">address15</div><div class="column-type">varchar (255)</div></div>
 </div>
 <div class="table" id="person_attribute">
 <div class="table-name">person_attribute</div>
@@ -1311,13 +1792,13 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="person_attribute_type">
 <div class="table-name">person_attribute_type</div>
 <div class="column primary-key required"><div class="column-name">person_attribute_type_id</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">name</div><div class="column-type">varchar (50)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column"><div class="column-name">format</div><div class="column-type">varchar (50)</div></div>
 <div class="column"><div class="column-name">foreign_key</div><div class="column-type">integer (10)</div></div>
 <div class="column required"><div class="column-name">searchable</div><div class="column-type">bit</div></div>
@@ -1331,7 +1812,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">edit_privilege</div><div class="column-type fk">privilege.privilege</div></div>
 <div class="column"><div class="column-name">sort_weight</div><div class="column-type">double (22)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="person_merge_log">
 <div class="table-name">person_merge_log</div>
@@ -1370,13 +1851,13 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type">integer (10)</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="privilege">
 <div class="table-name">privilege</div>
-<div class="column primary-key required"><div class="column-name">privilege</div><div class="column-type">varchar (50)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">varchar (250)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column primary-key required"><div class="column-name">privilege</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="program">
 <div class="table-name">program</div>
@@ -1389,8 +1870,8 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
 <div class="column required"><div class="column-name">name</div><div class="column-type">varchar (50)</div></div>
-<div class="column"><div class="column-name">description</div><div class="column-type">varchar (500)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="program_workflow">
 <div class="table-name">program_workflow</div>
@@ -1402,7 +1883,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="program_workflow_state">
 <div class="table-name">program_workflow_state</div>
@@ -1416,7 +1897,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="provider">
 <div class="table-name">provider</div>
@@ -1555,7 +2036,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="relationship_type">
 <div class="table-name">relationship_type</div>
@@ -1564,14 +2045,16 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">b_is_to_a</div><div class="column-type">varchar (50)</div></div>
 <div class="column required"><div class="column-name">preferred</div><div class="column-type">bit</div></div>
 <div class="column required"><div class="column-name">weight</div><div class="column-type">integer (10)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">creator</div><div class="column-type fk">users.user_id</div></div>
 <div class="column required"><div class="column-name">date_created</div><div class="column-type">timestamp (19)</div></div>
 <div class="column required"><div class="column-name">retired</div><div class="column-type">bit</div></div>
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">date_changed</div><div class="column-type">timestamp (19)</div></div>
+<div class="column"><div class="column-name">changed_by</div><div class="column-type fk">users.user_id</div></div>
 </div>
 <div class="table" id="report_object">
 <div class="table-name">report_object</div>
@@ -1589,7 +2072,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">voided_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">date_voided</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">void_reason</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="report_schema_xml">
 <div class="table-name">report_schema_xml</div>
@@ -1597,7 +2080,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column required"><div class="column-name">name</div><div class="column-type">varchar (255)</div></div>
 <div class="column required"><div class="column-name">description</div><div class="column-type">long varchar (65535)</div></div>
 <div class="column required"><div class="column-name">xml_data</div><div class="column-type">long varchar (65535)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="reporting_report_design">
 <div class="table-name">reporting_report_design</div>
@@ -1677,12 +2160,13 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">description</div><div class="column-type">varchar (1000)</div></div>
 <div class="column"><div class="column-name">schedule</div><div class="column-type">varchar (100)</div></div>
 <div class="column required"><div class="column-name">process_automatically</div><div class="column-type">bit</div></div>
+<div class="column"><div class="column-name">minimum_days_to_preserve</div><div class="column-type">integer (10)</div></div>
 </div>
 <div class="table" id="role">
 <div class="table-name">role</div>
 <div class="column primary-key required"><div class="column-name">role</div><div class="column-type">varchar (50)</div></div>
-<div class="column required"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column"><div class="column-name">description</div><div class="column-type">varchar (255)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="role_privilege">
 <div class="table-name">role_privilege</div>
@@ -1736,7 +2220,7 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">date_retired</div><div class="column-type">timestamp (19)</div></div>
 <div class="column"><div class="column-name">retired_by</div><div class="column-type fk">users.user_id</div></div>
 <div class="column"><div class="column-name">retire_reason</div><div class="column-type">varchar (1000)</div></div>
-<div class="column"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
+<div class="column required"><div class="column-name">uuid</div><div class="column-type">char (38)</div></div>
 </div>
 <div class="table" id="test_order">
 <div class="table-name">test_order</div>
@@ -1744,6 +2228,8 @@ perform that search when the page is loaded, so you can share links to specific 
 <div class="column"><div class="column-name">specimen_source</div><div class="column-type fk">concept.concept_id</div></div>
 <div class="column"><div class="column-name">laterality</div><div class="column-type">varchar (20)</div></div>
 <div class="column"><div class="column-name">clinical_history</div><div class="column-type">long varchar (65535)</div></div>
+<div class="column"><div class="column-name">frequency</div><div class="column-type fk">order_frequency.order_frequency_id</div></div>
+<div class="column"><div class="column-name">number_of_repeats</div><div class="column-type">integer (10)</div></div>
 </div>
 <div class="table" id="uiframework_user_defined_page_view">
 <div class="table-name">uiframework_user_defined_page_view</div>

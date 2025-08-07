@@ -97,17 +97,17 @@ body {
 <body>
 <div class="header">
 	<ul class="tabs">
-		<li class="current ra_1_9"><a href="#">RA 1.9</a></li>
-		<li class="1_11"><a href="#">1.11</a></li>
-		<li class="1_10"><a href="#">1.10</a></li>
-		<li class="1_9_7"><a href="#">1.9.7</a></li>
+		<li class="current 3_4_0"><a href="#">3.4.0</a></li>
+		<li class="3_3_0"><a href="#">3.3.0</a></li>
+		<li class="3_2_1"><a href="#">3.2.1</a></li>
+		<li class="1_9_0"><a href="#">1.9.0</a></li>
 	</ul>
 	<div class="colophon">
 		Created with <a href="https://github.com/bmamlin/dbtohtml" target="_blank">dbtohtml</a>
 	</div>
 </div>
 <div class="content">
-	<iframe id="content" src="openmrs-refapp-data-model-1.9.html" frameborder="0" border="0" cellspacing="0"></iframe>
+	<iframe id="content" src="openmrs-data-model-3.4.0.html" frameborder="0" border="0" cellspacing="0"></iframe>
 </div>
 <script>
 <!--
@@ -119,14 +119,16 @@ $(document).ready(function() {
 	$(".tabs li a").click(function() {
 		$(".tabs li").removeClass("current");
 		$(this).parent().addClass("current");
-		if ($(this).text() == "1.9.7") {
-			$("#content").attr("src", "openmrs-data-model-1.9.7.html");
-		} else if ($(this).text() == "1.10") {
-			$("#content").attr("src", "openmrs-data-model-1.10.html");
-		} else if ($(this).text() == "1.11") {
-			$("#content").attr("src", "openmrs-data-model-1.11.html");
+		if ($(this).text() == "3.4.0") {
+			$("#content").attr("src", "openmrs-data-model-3.4.0.html");
+		} else if ($(this).text() == "3.3.0") {
+			$("#content").attr("src", "openmrs-data-model-3.3.0.html");
+		} else if ($(this).text() == "3.2.1") {
+			$("#content").attr("src", "openmrs-data-model-3.2.1.html");
+		} else if ($(this).text() == "1.9.0") {
+			$("#content").attr("src", "openmrs-data-model-1.9.0.html"); 
 		} else {
-			$("#content").attr("src", "openmrs-refapp-data-model-1.9.html");
+			$("#content").attr("src", "openmrs-refapp-data-model-3.4.0.html");
 		}
 	})
 	function init() {
